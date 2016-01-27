@@ -40,7 +40,7 @@ YUI.add('crop-box', function (Y) {
                         self.imageBox.on('DOMMouseScroll', self.zoomImage, self):
                         self.imageBox.on('mousewheel', self.zoomImage, self);
                 };
-                this.image.src = this.options.imgSrc;
+                this.options.imgSrc && this.image.src = this.options.imgSrc;
             },
             setBackground: function()
             {
