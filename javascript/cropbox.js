@@ -142,7 +142,9 @@ var cropbox = function(options){
         var mousewheel = (/Firefox/i.test(navigator.userAgent))? 'DOMMouseScroll' : 'mousewheel';
         attachEvent(el, mousewheel, zoomImage);
     };
-    options.imgSrc && obj.image.src = options.imgSrc;
+    if (options.imgSrc) {
+        obj.image.src = options.imgSrc;
+    }
     attachEvent(el, 'DOMNodeRemoved', function(){detachEvent(document.body, 'DOMNodeRemoved', imgMouseUp)});
 
     return obj;
